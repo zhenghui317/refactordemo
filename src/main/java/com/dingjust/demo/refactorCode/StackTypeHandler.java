@@ -9,6 +9,6 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Component
-public @interface StackTypeCategoryHandler {
+public @interface StackTypeHandler {
     StackTypeEnum value();
 }

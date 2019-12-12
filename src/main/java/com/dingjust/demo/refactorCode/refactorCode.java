@@ -20,7 +20,7 @@ public class refactorCode {
     private NettyClient nettyClient;
 
     @Autowired
-    private HandlerStackTypeCategoryFactory cardCategoryFactory;
+    private HandlerStackTypeFactory cardCategoryFactory;
 
     private Map<Integer, EcuRfidTbDTO> ecuRfidTbMap;
     /**
@@ -35,7 +35,7 @@ public class refactorCode {
             return;
         }
         EcuRfidTbDTO rfidTb = ecuRfidTbMap.get(data);
-        IStackTypeCategoryStrategy cardCategoryStrategy = cardCategoryFactory.getStrategyByRequest(stack.getStackType());
+        IStackTypeStrategy cardCategoryStrategy = cardCategoryFactory.getStrategyByRequest(stack.getStackType());
         if(cardCategoryStrategy == null){
             throw new Exception("没有对应的策略");
         }

@@ -6,6 +6,6 @@ import com.dingjust.demo.entity.StackComponent;
 import com.dingjust.demo.pojo.dto.EcuRfidTbDTO;
 import com.dingjust.demo.socket.NettyClient;
 
-public interface IStackTypeCategoryStrategy {
+public interface IStackTypeStrategy {
     void done(NettyClient nettyClient, EcuRfidTbDTO rfidTb, Stack stack, int data, StackComponent stackComponent);
 }

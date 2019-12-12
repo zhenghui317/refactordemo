@@ -15,7 +15,7 @@ import java.util.Map;
  * @date  2019-11-20
  */
 @Component
-public class HandlerStackTypeCategoryProcessor implements ApplicationContextAware {
+public class HandlerStackTypeProcessor implements ApplicationContextAware {
 
     /**
      * 获取所有的策略加入HandlerRequestCategoryFactory属性中
@@ -25,13 +25,13 @@ public class HandlerStackTypeCategoryProcessor implements ApplicationContextAwar
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         //获取所有策略注解的Bean
-        Map<String, Object> requestStrategyMap = applicationContext.getBeansWithAnnotation(StackTypeCategoryHandler.class);
+        Map<String, Object> requestStrategyMap = applicationContext.getBeansWithAnnotation(StackTypeHandler.class);
         requestStrategyMap.forEach((k,v)->{
-            Class<IStackTypeCategoryStrategy> strategyClass = (Class<IStackTypeCategoryStrategy>) v.getClass();
-            StackTypeEnum type = strategyClass.getAnnotation(StackTypeCategoryHandler.class).value();
-            IStackTypeCategoryStrategy requestStrategy = applicationContext.getBean(strategyClass);
+            Class<IStackTypeStrategy> strategyClass = (Class<IStackTypeStrategy>) v.getClass();
+            StackTypeEnum type = strategyClass.getAnnotation(StackTypeHandler.class).value();
+            IStackTypeStrategy requestStrategy = applicationContext.getBean(strategyClass);
             //加入map中,type作为key
-            HandlerStackTypeCategoryFactory.putStrategy(type, requestStrategy);
+            HandlerStackTypeFactory.putStrategy(type, requestStrategy);
         });
     }
 }

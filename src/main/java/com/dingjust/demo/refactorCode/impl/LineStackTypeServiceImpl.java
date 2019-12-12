@@ -6,7 +6,7 @@ import com.dingjust.demo.pojo.dto.EcuRfidTbDTO;
 import com.dingjust.demo.socket.NettyClient;
 import com.dingjust.demo.enums.StackTypeEnum;
 import com.dingjust.demo.pojo.dto.WorkStationDTO;
-import com.dingjust.demo.refactorCode.StackTypeCategoryHandler;
+import com.dingjust.demo.refactorCode.StackTypeHandler;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
@@ -15,8 +15,8 @@ import java.util.List;
 
 @Slf4j
 @Service
-@StackTypeCategoryHandler(value = StackTypeEnum.LINE)
-public class LineStackTypeServiceImpl extends AbstractStackTypeCategoryService {
+@StackTypeHandler(value = StackTypeEnum.LINE)
+public class LineStackTypeServiceImpl extends AbstractStackTypeService {
 
     private List<WorkStationDTO> workStationDTOList;
 

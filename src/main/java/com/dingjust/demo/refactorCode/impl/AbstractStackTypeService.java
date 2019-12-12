@@ -7,7 +7,7 @@ import com.dingjust.demo.entity.StackComponent;
 import com.dingjust.demo.pojo.dto.EcuRfidTbDTO;
 import com.dingjust.demo.pojo.dto.StackConfigureDTO;
 import com.dingjust.demo.pojo.dto.WorkStationDTO;
-import com.dingjust.demo.refactorCode.IStackTypeCategoryStrategy;
+import com.dingjust.demo.refactorCode.IStackTypeStrategy;
 
 import java.util.List;
 import java.util.Map;
@@ -18,7 +18,7 @@ import java.util.Map;
  * @author zhenghui
  * @date 2019-11-4
  */
-public abstract class AbstractStackTypeCategoryService implements IStackTypeCategoryStrategy {
+public abstract class AbstractStackTypeService implements IStackTypeStrategy {
 
     protected Map<Integer, EcuItfNo> ecuItfNoMap;
 

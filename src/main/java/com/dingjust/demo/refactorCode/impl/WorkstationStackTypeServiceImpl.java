@@ -8,14 +8,14 @@ import com.dingjust.demo.entity.StackComponent;
 import com.dingjust.demo.entity.WorkStationType;
 import com.dingjust.demo.enums.StackTypeEnum;
 import com.dingjust.demo.pojo.dto.WorkStationDTO;
-import com.dingjust.demo.refactorCode.StackTypeCategoryHandler;
+import com.dingjust.demo.refactorCode.StackTypeHandler;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
 
 @Service
-@StackTypeCategoryHandler(value = StackTypeEnum.WORKSTATION)
-public class WorkstationStackTypeServiceImpl extends AbstractStackTypeCategoryService {
+@StackTypeHandler(value = StackTypeEnum.WORKSTATION)
+public class WorkstationStackTypeServiceImpl extends AbstractStackTypeService {
     @Override
     public void done(NettyClient nettyClient, EcuRfidTbDTO rfidTb, Stack stack, int data, StackComponent stackComponent) {
         WorkStationDTO workStationDTO = workStationMap.get(stack.getSequenceNumber());
